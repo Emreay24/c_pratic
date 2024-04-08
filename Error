@@ -1,0 +1,35 @@
+internal class hata_ayıklama
+{
+    private static void Main(string[] args)
+    {
+        try{
+            //Console.WriteLine("bir sayı giriniz: ");
+            //int sayi=Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("girdiğiniz sayı: "+ sayi);
+
+        }catch(Exception ex){
+            Console.WriteLine("hata: "+ ex.Message.ToString());
+
+        }//finally{
+        //    Console.WriteLine("işlem tamamlandı");
+        //}
+        try
+        {
+            Console.WriteLine("bir sayı giriniz: ");
+            int s=int.Parse(Console.ReadLine());
+        }
+        catch (FormatException Ex)
+        {
+            Console.WriteLine("veritipi uygun değil");
+            Console.WriteLine(Ex);
+        }catch(ArgumentNullException Ex){
+            Console.WriteLine("boş sayı girdiniz");
+            Console.WriteLine(Ex);
+        }catch(OverflowException Ex){
+            Console.WriteLine("çok büyük ya da küçük sayı girdiniz");
+            Console.WriteLine(Ex);
+        }finally{
+            Console.WriteLine("işlem tamamlandı");
+        }
+    }
+}
