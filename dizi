@@ -1,0 +1,21 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+
+        Console.WriteLine("lütfen dizinin eleman sayısını giriniz: ");
+        int DiziUzunlugu= int.Parse(Console.ReadLine());
+        int[] sayidizisi= new int[DiziUzunlugu];
+
+        for (int i = 0; i < DiziUzunlugu; i++)
+      {
+            Console.WriteLine("lütfen {0}.sayısını giriniz: ",i+1);
+            sayidizisi[i]= int.Parse(Console.ReadLine());
+      }
+        int toplam=0;
+        foreach (var sayi in sayidizisi)
+            toplam+=sayi;
+
+        Console.WriteLine("ortamanız: "+ toplam/DiziUzunlugu);
+    }
+}
