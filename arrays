@@ -1,0 +1,40 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        int[] sayiDizisi= {12,98,34,43,25,4,1,87};
+
+
+        Console.WriteLine("***** sırasız dizi****");
+        foreach (var sayi in sayiDizisi)
+            Console.WriteLine(sayi);
+
+        Console.WriteLine("***** sıralı dizi****");
+        Array.Sort(sayiDizisi);
+
+        foreach (var sayi in sayiDizisi)
+            Console.WriteLine(sayi);
+
+        Console.WriteLine("*****array clear ****");
+        Array.Clear(sayiDizisi,3,2);
+        
+        foreach (var sayi in sayiDizisi)
+            Console.WriteLine(sayi);
+
+        Console.WriteLine("***** array reserve ****");
+        Array.Reverse(sayiDizisi);
+
+        foreach (var sayi in sayiDizisi)
+            Console.WriteLine(sayi);
+
+        Console.WriteLine("***** array reserve ****");
+        Console.WriteLine(Array.IndexOf(sayiDizisi,43));
+
+        Console.WriteLine("***** array resize ****");
+        Array.Resize(ref sayiDizisi,9);
+        sayiDizisi[8]= 101;
+
+        foreach (var sayi in sayiDizisi)
+            Console.WriteLine(sayi);
+    }
+}
