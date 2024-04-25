@@ -1,0 +1,131 @@
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+
+internal class Odev_1
+{
+    static void Main()
+    {
+        Console.WriteLine("******ödev 1*******");
+        Console.Write("Pozitif bir sayı girin: ");
+        int n1;
+
+        while (!int.TryParse(Console.ReadLine(), out n1) || n1 <= 0)
+        {
+            Console.Write("Geçersiz giriş! Lütfen pozitif bir sayı girin: ");
+        }
+
+        Console.WriteLine($"{n1} adet pozitif sayı girin:");
+
+        int[] sayilar1 = new int[n1];
+        int girilenSayi1;
+        int ciftSayiSayac1 = 0;
+
+        for (int i = 0; i < n1; i++)
+        {
+            Console.Write($"{i + 1}. sayıyı girin: ");
+            while (!int.TryParse(Console.ReadLine(), out girilenSayi1) || girilenSayi1 <= 0)
+            {
+                Console.Write("Geçersiz giriş! Lütfen pozitif bir sayı girin: ");
+            }
+
+            sayilar1[i] = girilenSayi1;
+
+            if (girilenSayi1 % 2 == 0)
+            {
+                ciftSayiSayac1++;
+            }
+        }
+
+        Console.WriteLine($"Girilen sayılardan {ciftSayiSayac1} tanesi çift sayı:");
+
+        foreach (var sayi1 in sayilar1)
+        {
+            if (sayi1 % 2 == 0)
+            {
+                Console.WriteLine(sayi1);
+            }
+        }
+
+        Console.WriteLine("******ödev 2*******");
+
+        Console.Write("Pozitif bir sayı girin (n): ");
+        int n2;
+
+        while (!int.TryParse(Console.ReadLine(), out n2) || n2 <= 0)
+        {
+            Console.Write("Geçersiz giriş! Lütfen pozitif bir sayı girin (n): ");
+        }
+
+        Console.Write("Pozitif bir sayı daha girin (m): ");
+        int m2;
+
+        while (!int.TryParse(Console.ReadLine(), out m2) || m2 <= 0)
+        {
+            Console.Write("Geçersiz giriş! Lütfen pozitif bir sayı girin (m): ");
+        }
+
+        Console.WriteLine($"{n2} adet pozitif sayı girin:");
+
+        int[] sayilar2 = new int[n2];
+        int girilenSayi2;
+        int bolenSayiSayac2 = 0;
+
+        for (int i = 0; i < n2; i++)
+        {
+            Console.Write($"{i + 1}. sayıyı girin: ");
+            while (!int.TryParse(Console.ReadLine(), out girilenSayi2) || girilenSayi2 <= 0)
+            {
+                Console.Write("Geçersiz giriş! Lütfen pozitif bir sayı girin: ");
+            }
+
+            sayilar2[i] = girilenSayi2;
+
+            if (girilenSayi2 == m2 || girilenSayi2 % m2 == 0)
+            {
+                Console.WriteLine($"{girilenSayi2} {m2}'e eşittir veya tam böler.");
+                bolenSayiSayac2++;
+            }
+        }
+
+        Console.WriteLine($"Girilen sayılardan {bolenSayiSayac2} tanesi {m2}'e eşittir veya tam böler.");
+    
+        Console.WriteLine("******ödev 3 *******");
+
+        Console.Write("Pozitif bir sayı girin (n): ");
+        int n3;
+
+        while (!int.TryParse(Console.ReadLine(), out n3) || n3 <= 0)
+        {
+            Console.Write("Geçersiz giriş! Lütfen pozitif bir sayı girin (n): ");
+        }
+
+        Console.WriteLine($"{n3} adet kelime girin:");
+
+        string[] kelimeler3 = new string[n3];
+
+        for (int i = 0; i < n3; i++)
+        {
+            Console.Write($"{i + 1}. kelimeyi girin: ");
+            kelimeler3[i] = Console.ReadLine();
+        }
+
+        Console.WriteLine("Girilen kelimeler sondan başa doğru:");
+
+        for (int i = n3 - 1; i >= 0; i--)
+        {
+            Console.WriteLine(kelimeler3[i]);
+        }
+
+        Console.WriteLine("******ödev 4 *******");
+
+        Console.WriteLine("Lütfen bir cümle yazın:");
+        string cumle4 = Console.ReadLine();
+
+        // Cümledeki boşlukları kullanarak kelimeleri ayırıyoruz
+        string[] kelimeler4 = cumle4.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+        int kelimeSayisi4 = kelimeler4.Length;
+        int harfSayisi4 = cumle4.Length - (kelimeSayisi4 - 1); // Boşluk
+
+    }
+}
