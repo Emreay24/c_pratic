@@ -1,0 +1,58 @@
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+
+internal class String Metotlar
+{
+    static void Main()
+    {
+    string metin="Dersimiz CSharp, Hoşgeldiniz!";
+    string metin2="CSharp";
+
+    //lenght;
+    Console.WriteLine(metin.Length);
+
+    //ToUper, ToLower
+    Console.WriteLine(metin.ToUpper());
+    Console.WriteLine(metin.ToLower());
+
+    //concat
+    Console.WriteLine(string.Concat(metin,"merhaba!"));
+
+    //contains
+    Console.WriteLine(metin.Contains(metin2));
+    Console.WriteLine(metin.EndsWith("Hoşgeldiniz!"));
+    Console.WriteLine(metin.StartsWith("Merhaba!"));
+
+    //IndexOf
+    Console.WriteLine(metin.IndexOf("CS"));
+    Console.WriteLine(metin.IndexOf("Emre"));
+    Console.WriteLine(metin.LastIndexOf("i"));
+
+
+    //insert
+    Console.WriteLine(metin.Insert(0,"Merhaba"));
+
+    //PadLeft, PadRight
+    Console.WriteLine(metin + metin2.PadLeft(30));
+    Console.WriteLine(metin +metin2.PadLeft(30,'*'));
+    Console.WriteLine(metin.PadRight(50) + metin2);
+    Console.WriteLine(metin.PadRight(50,'-') +metin2);
+
+    //Remove
+    Console.WriteLine(metin.Remove(10));
+    Console.WriteLine(metin.Remove(5,3));
+    Console.WriteLine(metin.Remove(0,1));
+
+    //Replace
+    Console.WriteLine(metin.Replace("CSharp","c#"));
+    Console.WriteLine(metin.Replace(" ","-"));
+
+    //Split
+    Console.WriteLine(metin.Split(' ')[1]);
+
+    //Substring
+    Console.WriteLine(metin.Substring(4));
+    Console.WriteLine(metin.Substring(4,6));
+
+    }
+}
