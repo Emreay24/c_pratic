@@ -1,0 +1,89 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{ 
+    static void Main(string[] args)
+    {
+        // Liste tanımlamaları
+        List<int> sayilistesi = new List<int> { 20, 43, 24, 15, 7 };
+        List<string> renklistesi = new List<string> { "kırmızı", "mor", "turuncu", "mavi", "sarı" };
+
+        // Liste eleman sayıları
+        Console.WriteLine($"Renk listesi eleman sayısı: {renklistesi.Count}");
+        Console.WriteLine($"Sayı listesi eleman sayısı: {sayilistesi.Count}");
+
+        // Foreach ve List.ForEach kullanımı
+        foreach (var sayi in sayilistesi)
+            Console.WriteLine(sayi);
+        foreach (var renk in renklistesi)
+            Console.WriteLine(renk);
+
+        sayilistesi.ForEach(sayi => Console.WriteLine(sayi));
+        renklistesi.ForEach(renk => Console.WriteLine(renk));
+
+        // Eleman kaldırma
+        sayilistesi.Remove(7);
+        renklistesi.Remove("mavi");
+
+        // Belirli indekslerdeki elemanları kaldırma
+        if (sayilistesi.Count > 0)
+            sayilistesi.RemoveAt(0);
+        if (renklistesi.Count > 1)
+            renklistesi.RemoveAt(1);
+
+        sayilistesi.ForEach(sayi => Console.WriteLine(sayi));
+        renklistesi.ForEach(renk => Console.WriteLine(renk));
+
+        // Liste içinde arama
+        if (sayilistesi.Contains(10))
+            Console.WriteLine("10 liste içerisinde bulundu");
+        else
+            Console.WriteLine("10 liste içerisinde bulunamadı");
+
+        // Liste sıralı olduğundan BinarySearch kullanımı
+        renklistesi.Sort(); // Listeyi sıralıyoruz
+        int index = renklistesi.BinarySearch("kırmızı");
+        if (index >= 0)
+            Console.WriteLine($"Kırmızı bulunuyor. İndeksi: {index}");
+        else
+            Console.WriteLine("Kırmızı bulunamadı.");
+
+        // Diziyi listeye çevirme
+        string[] hayvanlar = { "kedi", "köpek", "kuş" };
+        List<string> hayvanlistesi = new List<string>(hayvanlar);
+
+        // Listeyi temizleme
+        hayvanlistesi.Clear();
+        Console.WriteLine($"Hayvan listesi eleman sayısı: {hayvanlistesi.Count}");
+
+        // Liste çevresinde nesne tutmak
+        List<Kullanicilar> kullanicilistesi = new List<Kullanicilar>();
+
+        Kullanicilar kullanici1 = new Kullanicilar
+        {
+            Isim = "Emre",
+            Soyisim = "Ay",
+            Yas = 24
+        };
+
+        Kullanicilar kullanici2 = new Kullanicilar
+        {
+            Isim = "Ali",
+            Soyisim = "Veli",
+            Yas = 25
+        };
+
+        kullanicilistesi.Add(kullanici1);
+        kullanicilistesi.Add(kullanici2);
+
+        Console.WriteLine($"Kullanıcı listesi eleman sayısı: {kullanicilistesi.Count}");
+    }
+
+    public class Kullanicilar
+    {
+        public string Isim { get; set; }
+        public string Soyisim { get; set; }
+        public int Yas { get; set; }
+    }
+}
