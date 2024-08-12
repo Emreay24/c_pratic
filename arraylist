@@ -1,0 +1,55 @@
+using System;
+using System.Collections;
+
+namespace arraylist
+{ 
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // ArrayList'i doğru şekilde tanımlayıp örneklendiriyoruz
+            ArrayList Liste = new ArrayList();
+
+            // ArrayList'e eleman ekliyoruz
+            // Liste.Add("ayse");
+            // Liste.Add(1);
+            // Liste.Add(true);
+            // Liste.Add('A');
+
+            // İkinci elemanı erişip yazdırıyoruz
+           //Console.WriteLine(Liste[1]);
+
+            // ArrayList'teki tüm elemanları döngü ile yazdırıyoruz
+            // foreach (var item in Liste)
+            //     Console.WriteLine(item);
+            //addrange
+            string[] renkler ={"kırmızı","sarı","yesil"};
+            List<int> sayilar =new List<int>(){1,2,65,23,99,3};
+
+            //Liste.AddRange(renkler);
+            Liste.AddRange(sayilar);
+
+            foreach (var item in Liste)
+                Console.WriteLine(item);
+
+            //sort
+            Liste.Sort();
+
+            foreach(var item in Liste)
+                Console.WriteLine(item);
+
+            //binary search
+            Console.WriteLine(Liste.BinarySearch(23));
+
+            //reserve
+            Liste.Reverse();
+            foreach (var item in Liste)
+                Console.WriteLine(item);
+
+            //Clear
+            Liste.Clear();
+            foreach (var item in Liste)
+                Console.WriteLine(item);
+        }  
+    }
+}
