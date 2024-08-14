@@ -1,0 +1,94 @@
+using System;
+
+namespace encasulation
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Ogrenci ogrenci=new Ogrenci();
+            ogrenci.Isim="Emre";
+            ogrenci.Soyad="Ay";
+            ogrenci.Ogrencino=174;
+            ogrenci.Sinif=3;
+            ogrenci.Ogrencibilgileri();
+
+            ogrenci.SinifAtlat();
+            ogrenci.Ogrencibilgileri();
+
+            ogrenci.SinifDusur();
+            ogrenci.Ogrencibilgileri();
+
+            Ogrenci ogrenci1=new Ogrenci("deniz","aydın",235,1);
+            ogrenci1.Ogrencibilgileri();
+
+            ogrenci1.SinifDusur();
+            ogrenci1.SinifDusur();
+             ogrenci1.Ogrencibilgileri();
+
+        }
+    }
+    class Ogrenci
+    {
+        private string isim;
+        private string soyad;
+        private int ogrencino;
+        private int sinif;
+
+        public string Isim 
+        { 
+            get {return isim;}
+            set {isim = value;}
+        }
+
+        public string Soyad 
+        { 
+            get {return soyad;} 
+            set {soyad = value;}
+        }
+        public int Ogrencino 
+        { 
+            get {return ogrencino;}
+            set {ogrencino = value;}
+        }
+        public int Sinif 
+        { 
+            get {return sinif;}
+            set 
+            {
+                if (value<1)
+                {
+                    Console.WriteLine("sınıf en az 1 olabilir");
+                }
+                else 
+                sinif = value;
+            }
+        }
+        public Ogrenci(string isim, string soyad, int ogrencino, int sinif)
+        {
+            Isim = isim;
+            this.soyad = soyad;
+            this.ogrencino = ogrencino;
+            this.sinif = sinif;
+        }
+        public Ogrenci(){}
+
+        public void Ogrencibilgileri()
+        {
+            Console.WriteLine("*****Öğrenci Bilgileri****");
+            Console.WriteLine("Öğrencinin Adı       :{0}",this.isim);
+            Console.WriteLine("Öğrencinin Soyadı    :{0}",this.soyad);
+            Console.WriteLine("Öğrencinin Numarası  :{0}",this.ogrencino);
+            Console.WriteLine("Öğrencinin Sınıfı    :{0}",this.sinif +".sınıf");
+        }
+        public void SinifAtlat()
+        {
+            this.Sinif=this.Sinif +1;
+        }
+        public void SinifDusur ()
+        {
+            this.Sinif=this.Sinif -1;
+        }
+    }
+}
