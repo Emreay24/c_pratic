@@ -1,0 +1,66 @@
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+using System.Windows.Markup;
+
+namespace sinif_kavrami
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // söz dizimi
+            // class sınıf adı
+            // {
+            //     [erişim belirleyici] [ValueSerializer tipi] özellik adi;
+            //     [erişim belirleyici] [ForeignKey dömüşüm tipi] Metot adı {[parametre listesi]}
+            //  {
+                //metot adları
+            //  }
+            //}
+            //Erişim Belirleyiciler
+            // *Public
+            // *private
+            // *internal-bulunduğu proje
+            // *protected-tanımlı oldugu sınıfta ve miras alanlarda
+
+            Calisan calisan1 = new Calisan();
+            calisan1.Ad="Ayşe";
+            calisan1.Soyad="Kara";
+            calisan1.No= 654987321;
+            calisan1.Departman="Hukuk";
+
+            calisan1.CalisanBilgileri();
+
+            Calisan calisan2 = new Calisan();
+            calisan2.Ad="Emre";
+            calisan2.Soyad="Ay";
+            calisan2.No= 6415584;
+            calisan2.Departman="Yazılım bölümü";
+
+            calisan2.CalisanBilgileri();
+
+
+        }
+    }
+    class Calisan
+    {
+        public string Ad;
+        public string Soyad;
+        public int No;
+        public string Departman;
+
+        public void CalisanBilgileri()
+        {
+            Console.WriteLine("çalışanın Adı:{0}", Ad);
+            Console.WriteLine("çalışanın Soyadı:{0}", Soyad);
+            Console.WriteLine("çalışanın numarası:{0}", No);
+            Console.WriteLine("çalışanın Departman Adı:{0}", Departman);
+            Console.WriteLine("********");
+
+        }
+    }
+
+}
+
