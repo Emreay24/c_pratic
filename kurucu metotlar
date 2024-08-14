@@ -1,0 +1,62 @@
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+using System.Windows.Markup;
+
+namespace sinif_kavrami
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Calisan calisan1 = new Calisan("Ayşe","Kara",8654654, "HUKUK");
+            calisan1.CalisanBilgileri();
+
+            Calisan calisan2 = new Calisan();
+            calisan2.Ad="Emre";
+            calisan2.Soyad="Ay";
+            calisan2.No= 6415584;
+            calisan2.Departman="Yazılım bölümü";
+
+            calisan2.CalisanBilgileri();
+
+            Calisan calisan3 = new Calisan("Zeynep","Ak");
+            calisan3.CalisanBilgileri();
+
+
+        }
+    }
+    class Calisan
+    {
+        public string Ad;
+        public string Soyad;
+        public int No;
+        public string Departman;
+        
+        public Calisan(string ad, string soyad, int no, string departman)
+        {
+            this.Ad=ad;
+            this.Soyad=soyad;
+            this.No=no;
+            this.Departman=departman;
+        }
+        public Calisan(string ad, string soyad)
+        {
+            this.Ad=ad;
+            this.Soyad=soyad;
+        }
+        public Calisan(){}
+        public void CalisanBilgileri()
+        {
+            Console.WriteLine("çalışanın Adı:{0}", Ad);
+            Console.WriteLine("çalışanın Soyadı:{0}", Soyad);
+            Console.WriteLine("çalışanın numarası:{0}", No);
+            Console.WriteLine("çalışanın Departman Adı:{0}", Departman);
+            Console.WriteLine("********");
+
+        }
+    }
+
+}
+
