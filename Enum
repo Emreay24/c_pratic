@@ -1,0 +1,33 @@
+using System;
+
+namespace Enum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Gunler.Cuma);
+            Console.WriteLine((int)Gunler.Cumartesi);//sırasını belli eder
+
+            int sicaklik= 32;
+
+            if (sicaklik <=(int)HavaDurumu.Normal)
+                Console.WriteLine("Dışarı çıkmak için biraz daha bekleyin.");
+            else if(sicaklik>=(int)HavaDurumu.Sicak)
+                Console.WriteLine("Dışarı çıkmak için sıcak bir gün");
+            else if (sicaklik >=(int)HavaDurumu.Normal && sicaklik<(int)HavaDurumu.CokSicak)
+                Console.WriteLine("Hadi dışarıya çıkalım");
+
+        
+        }
+    }
+    enum Gunler
+    {
+        Pazartesi = 1,Sali, Carsamba, Persembe, Cuma, Cumartesi, Pazar 
+        //alt alta da yazılabilir
+        //herhangi bir güne sayı atarsak ondan sonraki bir artarak gider
+    }
+}   enum HavaDurumu
+{
+    Soguk =5, Normal =20, Sicak =25, CokSicak=30
+}
